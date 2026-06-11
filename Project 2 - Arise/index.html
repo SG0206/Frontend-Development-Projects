@@ -1,0 +1,361 @@
+<head>
+  <title>Arise by Saydul</title>
+</head>
+<body>
+  <header>
+    <img src="arise-logo.svg" class="logo" />
+    <div class="nav-links">
+      <ul>
+        <li class="home"><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#works">Works</a></li>
+      </ul>
+    </div>
+    <div class="contact-box">
+      <div class="phone-box">
+        <img src="phone.svg" />
+      </div>
+      <p>Contact Us</p>
+    </div>
+  </header>
+  <section class="content">
+    <div class="heading-container">
+      <div class="tag-line">
+        <p>
+          We Design Tech <span>Websites</span> users Love, investors can’t
+          resist
+        </p>
+        <button>
+          <div class="right-arrow-box">
+            <img src="right-arrow.svg" />
+          </div>
+        </button>
+      </div>
+      <div class="title-p">
+        <h1>Design that drives real business growth</h1>
+        <p>
+          Transforming brands with innovative and captivating web solutions.
+        </p>
+      </div>
+    </div>
+    <div class="button-container">
+      <div class="btn">
+        <p>Buy Now</p>
+      </div>
+      <div class="sub-cont">
+        <img src="blue-circle.svg" />
+        <p>2 Spots Available</p>
+      </div>
+    </div>
+  </section>
+  <section class="work">
+    <img src="work.svg" />
+  </section>
+  <section class="sp-container">
+    <div class="sp1">
+      <img src="star-rating.svg" />
+      <p>4.9/5 From 3,602 Customers</p>
+    </div>
+    <div class="sp2">
+      <img src="footer-logos.svg" />
+    </div>
+  </section>
+  <img class="background-pic" src="arise-background.svg" />
+</body>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #00020f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1180px;
+    height: 64px;
+    padding: 6px 0px;
+    margin-top: 27.75px;
+    margin-bottom: 140px; /*should be 118px but background-img not aligning like figma so i did it by eye*/
+  }
+  header * {
+    font-family: "Rethink Sans";
+  }
+  .logo {
+    width: 114.42px;
+    height: 40px;
+  }
+  /*Header middle*/
+  .nav-links {
+    width: 474px;
+    height: 64px;
+    border-radius: 100px;
+    border: 1px solid;
+    padding: 8px 24px 8px 8px;
+    gap: 20px;
+    background-color: #00020f;
+    border-color: #242d6b;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-links ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .home {
+    width: 76px;
+    height: 48px;
+    border-radius: 100px;
+    border: 1px solid;
+    padding: 12px 16px;
+    background-color: #131839;
+    border-color: #242d6b;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #a7adbe;
+    font-weight: 500;
+    size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    height: 24px;
+  }
+  .home a {
+    color: white;
+  }
+  /*Header right*/
+  .contact-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 149px;
+    height: 52px;
+    border-radius: 100px;
+    padding: 14px 20px;
+    gap: 6px;
+    background-color: #1a4fff;
+  }
+  .phone-box {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .phone-box img {
+    width: 15px;
+    height: 14.17px;
+    color: white;
+  }
+  .contact-box p {
+    width: 83px;
+    height: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: white;
+  }
+  /*Content*/
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 780px;
+    height: 415px;
+    gap: 40px;
+    margin-bottom: 49.97px;
+    z-index: 1;
+  }
+  .content * {
+    font-family: "Inter tight";
+  }
+  .heading-container {
+    width: 780px;
+    height: 272px;
+    gap: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .tag-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    border-radius: 100px;
+    padding: 8px 8px 8px 16px;
+    gap: 10px;
+    background-color: #ffffff12;
+    border: 1px solid;
+    border-top: 1px;
+    border-color: #ffffff1a;
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 8px 10.9px 0px rgba(0, 3, 18, 0.12),
+      0px 1px 1px 0px rgba(0, 3, 18, 0.3);
+    margin-bottom: 19px;
+  }
+  .tag-line p {
+    height: 26px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #a7adbe;
+  }
+  .tag-line span {
+    color: #ccd8ff;
+  }
+  .tag-line button {
+    width: 38px;
+    height: 26px;
+    border-radius: 100px;
+    border: none;
+    padding: 4px 10px;
+    background-color: #1a4fff;
+  }
+  .right-arrow-box {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title-p {
+    width: 780px;
+    height: 211px;
+    gap: 20px;
+  }
+  .title-p h1 {
+    height: 164px;
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .title-p p {
+    height: 27px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #a7adbe;
+    text-align: center;
+  }
+  .button-container {
+    width: 278px;
+    height: 103px;
+    padding-right: 70px;
+    padding-left: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .btn {
+    width: 138px;
+    height: 59px;
+    border-radius: 100px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(180deg, #4d76ff 0%, #1a4fff 100%);
+    box-shadow: inset 0px 1px 5px 0px rgba(255, 255, 255, 0.3),
+      inset 0px -1px 1px 0px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn p {
+    width: 72px;
+    height: 27px;
+    font-family: "Rethink Sans";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: white;
+  }
+  .sub-cont {
+    height: 24px;
+    gap: 8px;
+    display: flex;
+  }
+  .sub-cont p {
+    width: 125px;
+    height: 24px;
+    font-family: "Rethink Sans";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #6d7792;
+  }
+  /*Work*/
+  .work {
+    margin-bottom: 76.52px;
+    z-index: 1;
+  }
+  /*SP*/
+  .sp-container {
+    width: 1180px;
+    height: 112px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 114.77px;
+  }
+  .sp1 {
+    width: 1180px;
+    height: 50px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .sp1 p {
+    width: 210px;
+    height: 24px;
+    font-family: Rethink Sans;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #a7adbe;
+  }
+  /*Background pic*/
+  .background-pic {
+    height: 816.6287231445312;
+    top: 80.65px;
+    position: absolute;
+  }
+</style>
