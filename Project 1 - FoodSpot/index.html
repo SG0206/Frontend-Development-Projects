@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodSpot by Saydul</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.4s ease-in-out;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      section,
+      div,
+      img,
+      h1,
+      h2,
+      h3,
+      p,
+      a,
+      button {
+        transition: all 0.4s ease-in-out;
+      }
+
+      /*==================
+  Header
+==================*/
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 5vw;
+        height: 5rem;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: transparent;
+        color: white;
+      }
+
+      header.scrolled {
+        background-color: white;
+        color: black;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 2rem;
+        color: inherit;
+      }
+
+      .logo span {
+        color: #ff0157;
+      }
+
+      .navigation {
+        display: flex;
+        list-style: none;
+      }
+
+      .navigation li {
+        margin-left: 2rem;
+        font-size: 1rem;
+      }
+
+      .navigation li a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Hamburger */
+      .hamburger {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      /*==================
+  Banner
+==================*/
+      .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url(https://i.postimg.cc/s29LNR86/bg.jpg);
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .content {
+        max-width: 60rem;
+      }
+
+      .content h2 {
+        font-size: 4rem;
+        color: white;
+        font-weight: 600;
+      }
+
+      .content p {
+        font-weight: 300;
+        font-size: 1rem;
+        color: white;
+        margin-top: 1rem;
+      }
+
+      .btn {
+        text-decoration: none;
+        color: white;
+        background-color: #ff0157;
+        padding: 0.8rem 2rem;
+        letter-spacing: 2px;
+        display: inline-block;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        border-radius: 0.3rem;
+      }
+
+      /*==================
+  About
+==================*/
+      .about {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        width: 100%;
+        padding: 5rem;
+        flex-wrap: wrap;
+      }
+
+      .ab {
+        flex: 1 1 45%;
+      }
+
+      .ab img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+
+      .title-text {
+        color: black;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+      }
+
+      .title-text span {
+        color: #ff0157;
+        font-weight: 700;
+        font-size: 1.5em;
+      }
+
+      .title-text,
+      .section-text {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /*==================
+  Menu
+==================*/
+      .menu {
+        padding: 5rem 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .section-text {
+        max-width: 40rem;
+      }
+
+      .section-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        gap: 2rem;
+      }
+
+      .box {
+        width: 100%;
+        max-width: 21rem;
+        border: 1rem solid white;
+        box-shadow: 0 0.3rem 2rem lightgray;
+        background: white;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .box img {
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+      }
+
+      .sandwich {
+        object-position: 0% 20%;
+      }
+
+      .food-text {
+        text-align: center;
+        padding: 1rem 0 0.5rem;
+        font-weight: 500;
+      }
+
+      /*==================
+  Experts
+==================*/
+      .experts {
+        padding: 5rem 2rem;
+      }
+
+      .experts .box {
+        max-width: 16rem;
+        margin: 1.5rem;
+        box-shadow: 0 0.3rem 2rem rgba(0, 0, 0, 0.08);
+        background: white;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .expert1 {
+        object-position: 0% 37%;
+      }
+      .expert2 {
+        object-position: 0% 33%;
+      }
+      .expert5 {
+        object-position: 0% 19%;
+      }
+
+      /*==================
+  Testimonials
+==================*/
+      .testimonials {
+        padding: 5rem 2rem;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url(https://i.postimg.cc/k5dZs5jR/bg2.jpg);
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+
+      .testimonials .title-text {
+        color: white;
+      }
+
+      .testimonials .section-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2rem;
+        gap: 2rem;
+      }
+
+      .testimonials .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 22rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        text-align: center;
+      }
+
+      .testimonials img {
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .cust1 {
+        object-position: 0% 20%;
+      }
+
+      .testimonials .box p {
+        font-style: italic;
+        padding-top: 2rem;
+        color: black;
+      }
+
+      .testimonials .box h3 {
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+        color: #ff0157;
+        font-weight: 600;
+      }
+
+      /*==================
+  Contact
+==================*/
+      .contact {
+        padding: 5rem 2rem;
+        background: url(https://i.postimg.cc/4NmrNq7y/bg3.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .contactform {
+        max-width: 30rem;
+        margin: 3rem 0 0;
+        background: white;
+        padding: 3rem 2rem;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+      }
+
+      .contactform h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+      }
+
+      .inputbox {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+
+      .contactform .inputbox input,
+      .contactform .inputbox textarea {
+        width: 100%;
+        border: 1px solid #555;
+        border-radius: 0.5rem;
+        padding: 0.8rem;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 300;
+        resize: none;
+      }
+
+      .inputbox input[type="submit"] {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        color: white;
+        background: #ff0157;
+        max-width: 8rem;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        padding: 0.6rem 1.5rem;
+      }
+
+      /*==================
+  Footer
+==================*/
+      footer {
+        background: #ff0157;
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        font-weight: 300;
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .icons a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        margin: 0 0.25rem;
+      }
+
+      /*==================
+  Responsive Media Queries
+==================*/
+      @media (max-width: 1024px) {
+        .about {
+          padding: 4rem 2rem;
+        }
+
+        .experts .box {
+          max-width: 14rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+          z-index: 1001;
+        }
+
+        .navigation {
+          position: absolute;
+          top: 5rem;
+          left: 0;
+          width: 100%;
+          flex-direction: column;
+          background-color: white;
+          display: none;
+          text-align: center;
+          padding: 2rem 0;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation.nav-active {
+          display: flex;
+        }
+
+        .navigation li {
+          margin: 1rem 0;
+        }
+
+        .navigation li a {
+          color: black;
+          font-size: 1.2rem;
+        }
+
+        .about {
+          flex-direction: column;
+          padding: 4rem 1rem;
+        }
+
+        .ab {
+          width: 100%;
+        }
+
+        .content h2 {
+          font-size: 2.5rem;
+        }
+
+        .testimonials .box {
+          padding: 1.5rem;
+        }
+
+        .box img {
+          height: 12rem;
+        }
+
+        .testimonials img {
+          height: 12rem;
+        }
+
+        .contactform {
+          padding: 2rem 1rem;
+          margin: 3rem auto 0;
+        }
+        .inputbox input[type="submit"] {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--Header-->
+    <header id="header">
+      <a href="#" class="logo">Food<span>Spot</span></a>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="navigation" id="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#experts">Expert</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </header>
+    <!--Banner-->
+    <section class="banner">
+      <div class="content">
+        <h2>Always Choose Good</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+          necessitatibus hic dolor, ullam eum, soluta officiis laudantium
+          debitis alias quidem laborum optio placeat consequatur, facilis iure
+          veritatis assumenda atque itaque?
+        </p>
+        <a href="#" class="btn">OUR MENU</a>
+      </div>
+    </section>
+    <!--About Us-->
+    <section class="about" id="about">
+      <div class="ab">
+        <h3 class="title-text"><span>A</span>bout Us</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+          numquam iste minus nisi. Eaque, fugit aspernatur esse aut illo tempora
+          praesentium reiciendis non voluptatibus deleniti nesciunt atque eos
+          explicabo numquam, in laudantium beatae ipsam eum itaque quod, velit
+          odit ducimus!
+        </p>
+        <br />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit sequi
+          tenetur voluptas laborum commodi enim debitis ipsam obcaecati
+          consectetur corporis quibusdam labore, molestias tempore, soluta
+          veniam atque voluptate consequuntur! Tempore.
+        </p>
+      </div>
+      <div class="ab">
+        <img src="https://i.postimg.cc/13F2DFKZ/pizza.jpg" />
+      </div>
+    </section>
+    <!--Menu-->
+    <section class="menu" id="menu">
+      <div class="section-text">
+        <h3 class="title-text">Our <span>M</span>enu</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, ad.</p>
+      </div>
+      <div class="section-container">
+        <div class="box">
+          <img src="https://i.postimg.cc/sf0N8m6r/burger.jpg" />
+          <p class="food-text">Special Burgers</p>
+        </div>
+        <div class="box">
+          <img src="https://i.postimg.cc/fLzP4rQw/pizza2.jpg" />
+          <p class="food-text">Special Pizzas</p>
+        </div>
+        <div class="box">
+          <img src="https://i.postimg.cc/7PBF4wLj/fries.jpg" />
+          <p class="food-text">Tasty Fries</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://i.postimg.cc/4dWSXQXp/sandwich.jpg"
+            class="sandwich"
+          />
+          <p class="food-text">Special Sandwiches</p>
+        </div>
+        <div class="box">
+          <img src="https://i.postimg.cc/5NTDHgL3/taco.jpg" />
+          <p class="food-text">Special Tacos</p>
+        </div>
+        <div class="box">
+          <img src="https://i.postimg.cc/3N6fvr4R/cc.jpg" />
+          <p class="food-text">Cold Drinks</p>
+        </div>
+      </div>
+      <a href="#" class="btn">VIEW ALL</a>
+    </section>
+    <!--Experts-->
+    <section class="experts" id="experts">
+      <div class="section-text">
+        <h2 class="title-text">Our Kitchen <span>E</span>xperts</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+          mollitia?
+        </p>
+      </div>
+      <div class="section-container">
+        <div class="box">
+          <img
+            src="https://i.postimg.cc/wx0pBDwf/expert1.jpg"
+            class="expert1"
+          />
+          <p class="food-text">Expert 1</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://i.postimg.cc/8PYgRNQL/expert2.jpg"
+            class="expert2"
+          />
+          <p class="food-text">Expert 2</p>
+        </div>
+        <div class="box">
+          <img src="https://i.postimg.cc/XYySxm4m/expert3.jpg" />
+          <p class="food-text">Expert 3</p>
+        </div>
+        <div class="box">
+          <img src="https://i.postimg.cc/hv361bwK/expert4.jpg" />
+          <p class="food-text">Expert 4</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://i.postimg.cc/hjsHfq1z/expert5.jpg"
+            class="expert5"
+          />
+          <p class="food-text">Expert 5</p>
+        </div>
+      </div>
+    </section>
+    <!--Testimonials-->
+    <section class="testimonials" id="testimonials">
+      <div class="section-text">
+        <h2 class="title-text">What they <span>S</span>aid about us</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, vero.
+        </p>
+      </div>
+      <div class="section-container">
+        <div class="box">
+          <img src="https://i.postimg.cc/XJ4Rjvd6/cust1.jpg" class="cust1" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            expedita laboriosam eligendi qui. Minima, tempora.
+          </p>
+          <h3>Customer 1</h3>
+        </div>
+        <div class="box">
+          <img src="https://i.postimg.cc/DzkVN6zZ/cust-2.jpg" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            expedita laboriosam eligendi qui. Minima, tempora.
+          </p>
+          <h3>Customer 2</h3>
+        </div>
+        <div class="box">
+          <img src="https://i.postimg.cc/s2YFCWBJ/cust3.jpg" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            expedita laboriosam eligendi qui. Minima, tempora.
+          </p>
+          <h3>Customer 3</h3>
+        </div>
+      </div>
+    </section>
+    <!--Contact Us-->
+    <section class="contact" id="contact">
+      <div class="section-text">
+        <h2 class="title-text"><span>C</span>ontact Us</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores,
+          quaerat.
+        </p>
+      </div>
+      <form action="#" method="post">
+        <div class="contactform">
+          <h3>Send Message</h3>
+          <div class="inputbox">
+            <input type="text" placeholder="Name" required />
+          </div>
+          <div class="inputbox">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="inputbox">
+            <textarea placeholder="Message" required></textarea>
+          </div>
+          <div class="inputbox">
+            <input type="submit" value="SEND" />
+          </div>
+        </div>
+      </form>
+    </section>
+    <!--Footer-->
+    <footer>
+      <p>Coded by Md Saydul Goni</p>
+      <div class="icons">
+        <a href="https://www.linkedin.com/in/md-saydul-goni" target="_blank">
+          <i class="bx bxl-linkedin-square"></i>
+        </a>
+        <a href="https://codepen.io/SG0206" target="_blank">
+          <i class="bx bxl-codepen"></i>
+        </a>
+        <a href="https://github.com/SG0206"> <i class="bx bxl-github"></i></a>
+      </div>
+    </footer>
+    <!-- JS for header scroll effect -->
+    <script>
+      const header = document.getElementById("header");
+      const hamburger = document.getElementById("hamburger");
+      const navigation = document.getElementById("navigation");
+
+      // Scroll effect for header
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Hamburger menu toggle
+      hamburger.addEventListener("click", () => {
+        navigation.classList.toggle("nav-active");
+        hamburger.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
